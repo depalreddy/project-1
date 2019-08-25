@@ -1,0 +1,69 @@
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+  <mat-card class="example-card">
+    <h3 class="color" id="num">simple form</h3>
+    <!-- <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p> -->
+
+    <mat-card-content class="login-container">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Model Name"
+          [(ngModel)]="name"
+          name="name"
+          required
+          #userName="ngModel"
+        />
+        <!-- <div class="alert"> -->
+        <mat-error *ngIf="userName.touched">
+          <mat-error *ngIf="userName.errors?.required">
+            Enter Model Name
+          </mat-error>
+        </mat-error>
+      <!-- </div> -->
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="number"
+          placeholder="price"
+          required
+          [(ngModel)]="price"
+          name="price"
+          #userPrice="ngModel"
+        />
+        <mat-error *ngIf="!userPrice.valid && userPrice.touched">
+          Price is required!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Options"  required
+        [(ngModel)]="option"
+        name="option">
+          <mat-option value="1">one</mat-option>
+          <mat-option value="2">two</mat-option>
+          <mat-option value="3">three</mat-option>
+          <mat-option value="4">four</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="check" name="check">All the fileds are valid!!</mat-checkbox>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!newUserForm.form.valid"
+    >
+      Register
+    </button>&nbsp;
+    <!-- <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="newUserForm.reset()"
+    >
+      Reset
+    </button> -->
+  </mat-card>
+</form>

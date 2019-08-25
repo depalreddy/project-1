@@ -1,0 +1,29 @@
+<!-- <p >{{loginData}}</p> -->
+<div *ngIf="loginData.length === 0">no data fund</div>
+<ul *ngFor="let order of loginData">
+  <li>{{ order.name }}</li>
+  <li>{{ order.price }}</li>
+  <li>{{ order.option }}</li>
+</ul>
+
+<input
+  type="email"
+  class="form-control"
+  id="exampleInputEmail1"
+  aria-describedby="emailHelp"
+  placeholder="Enter email"
+  (input)="onSearchChange($event.target.value)"
+/>
+<div>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    [disabled]="!isValidate"
+  >
+    Reset</button
+  >&nbsp;
+  <button mat-raised-button color="primary" type="button">
+    Reset
+  </button>
+</div>

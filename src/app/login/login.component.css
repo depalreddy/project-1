@@ -1,0 +1,36 @@
+.login-container > * {
+  width: 100%;
+}
+.example-card {
+  margin: 0 auto;
+}
+.error-message {
+  color: red;
+}
+/* .color{
+  color: red;
+}
+#num{
+  color: blue;
+}
+form h3 {
+  display: inline-block;
+} */
+/* .alert{
+  background: #f2edda;
+  padding: 7px;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: 2s alertAnim forwards;
+} */
+.example-card{
+  width: 50%;
+}
+
+
+@media (max-width: 576px) {
+  .example-card{
+    width: 100%;
+  }
+ }

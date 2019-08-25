@@ -1,0 +1,20 @@
+.login-container > * {
+  width: 100%;
+}
+.example-card {
+  margin: 0 auto;
+}
+.error-message {
+  color: red;
+}
+
+.example-card{
+  width: 50%;
+}
+
+
+@media (max-width: 576px) {
+  .example-card{
+    width: 100%;
+  }
+ }
